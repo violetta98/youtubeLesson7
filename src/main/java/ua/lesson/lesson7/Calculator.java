@@ -11,11 +11,17 @@ public class Calculator {
             this.result += param;     // определяется тем, сколько будет передано аргументов и каждый раз это количество
     }                                 // может быть разным﻿
 
-    public void div(int ... args) {
+    public void div(int ... args) throws UserException, IllegalArgumentException {
         if (args.length > 0) {
-            for (int arg : args)
+            result = args[0];
+            for (int arg : args) {
+                if (arg == 0)
+                    throw new IllegalArgumentException("You try to divide by zero. Please, change argument!");
                 result /= arg;
+            }
         }
+        else
+            throw new UserException("There are not any args!");
     }
 
     public int getResult() {

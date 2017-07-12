@@ -15,7 +15,15 @@ public class InteractRunner {
             int first = reader.nextInt();
             System.out.println("Enter second arg : ");
             int second = reader.nextInt();
-            calculator.add(first, second);
+            try {
+                calculator.div(first, second);
+            } catch (UserException e) {
+                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } finally {
+
+            }
             System.out.println("Result : " + calculator.getResult());
             calculator.cleanResult();
             System.out.println("Exit : yes/no ");
