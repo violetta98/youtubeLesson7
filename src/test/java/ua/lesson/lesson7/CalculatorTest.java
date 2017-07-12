@@ -33,4 +33,10 @@ public class CalculatorTest {
         calculator.div(2);
         assertEquals(1, calculator.getResult());
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void divTest4() throws Exception { // OK
+        Calculator calculator = new Calculator();
+        calculator.div(2, 0, 13);
+    }
 }
