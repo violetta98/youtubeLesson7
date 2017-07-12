@@ -20,7 +20,7 @@ public class CalculatorTest {
         calculator.div(); // not parameters (!)
     }
 
-    @Test (expected = UserException.class) // Wrong (because exception won't throw)
+    @Test //(expected = UserException.class) // Wrong (because exception won't throw)
     public void divTest2() throws Exception {
         Calculator calculator = new Calculator();
         calculator.div(2);
